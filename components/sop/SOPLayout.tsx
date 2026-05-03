@@ -1,3 +1,5 @@
+'use client'
+
 import { ChecklistPhase } from './ChecklistPhase'
 
 interface SOPLayoutProps {
