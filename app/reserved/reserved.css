@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #0B0B0B;
+}
+
+/* ── Screen layout ── */
+.screen-bg {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #1A1A1A 0%, #0B0B0B 100%);
+  padding: 40px 20px;
+  gap: 32px;
+}
+
+/* ── Card: 5×7 in ── */
+.card-outer {
+  width: 5in;
+  height: 7in;
+  background: linear-gradient(160deg, #111111 0%, #0D0D0D 50%, #111111 100%);
+  border: 2px solid #C9A24A;
+  box-shadow:
+    0 0 0 6px #0D0D0D,
+    0 0 0 8px rgba(201,162,74,0.4),
+    0 30px 80px rgba(0,0,0,0.8),
+    inset 0 0 60px rgba(201,162,74,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner gold frame inset */
+.card-inner {
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+  border: 1px solid rgba(201,162,74,0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 40px 36px;
+  position: relative;
+}
+
+/* Corner accents via pseudo-elements */
+.card-inner::before,
+.card-inner::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: #C9A24A;
+  border-style: solid;
+}
+.card-inner::before {
+  top: 10px;
+  left: 10px;
+  border-width: 2px 0 0 2px;
+}
+.card-inner::after {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 2px 2px 0;
+}
+
+/* Additional corners via wrapper */
+.card-outer::before,
+.card-outer::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: #C9A24A;
+  border-style: solid;
+  z-index: 2;
+}
+.card-outer::before {
+  top: 22px;
+  right: 22px;
+  border-width: 2px 2px 0 0;
+}
+.card-outer::after {
+  bottom: 22px;
+  left: 22px;
+  border-width: 0 0 2px 2px;
+}
+
+/* ── Ornaments ── */
+.top-ornament,
+.bottom-ornament {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin: 12px 0;
+}
+
+.ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,162,74,0.6), transparent);
+}
+
+.diamond {
+  font-size: 9px;
+  color: #C9A24A;
+  line-height: 1;
+}
+
+/* ── Logo ── */
+.logo-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.logo-img {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 24px rgba(201,162,74,0.3));
+}
+
+/* ── Reserved text ── */
+.reserved-wrap {
+  text-align: center;
+  padding: 16px 0 8px;
+}
+
+.reserved-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  color: #C9A24A;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.reserved-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  font-weight: 300;
+  font-style: italic;
+  background: linear-gradient(180deg, #F4D06F 0%, #C9A24A 60%, #9F7A28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+
+.reserved-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(201,162,74,0.55);
+  text-transform: uppercase;
+}
+
+/* ── Print button (screen only) ── */
+.print-btn {
+  background: #C9A24A;
+  color: #0B0B0B;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 12px 36px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.print-btn:hover {
+  background: #F4D06F;
+}
+
+/* ── Print styles ── */
+@media print {
+  @page {
+    size: 5in 7in;
+    margin: 0;
+  }
+
+  body, .screen-bg {
+    background: black !important;
+    min-height: unset !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    display: block !important;
+  }
+
+  .print-btn { display: none !important; }
+
+  .card-outer {
+    width: 5in !important;
+    height: 7in !important;
+    box-shadow: none !important;
+    border: 6px solid #C9A24A !important;
+    margin: 0 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .reserved-title {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .logo-img {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

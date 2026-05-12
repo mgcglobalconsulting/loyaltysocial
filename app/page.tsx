@@ -1,26 +1,49 @@
 import { Hero } from '../components/Hero'
+import { Marquee } from '../components/Marquee'
+import { ReservationForm } from '../components/ReservationForm'
 
-const experiences = [
-  'Upscale food and drink service for date nights, birthdays, and after-work gatherings',
-  'Weekly themed events curated for a grown, social, professional crowd',
-  'VIP table reservations with premium placement and a more private lounge rhythm',
-  'Private nightly events for brands, entrepreneurs, creatives, and milestone celebrations',
+const loungeMarqueeItems = [
+  'Birthday Celebrations',
+  'VIP Table Nights',
+  'Professional Mixers',
+  'Date Nights',
+  'After-Work Socials',
+  'Brand Activations',
+  'Social Club Evenings',
+  'Upscale Nightlife',
 ]
 
-const events = [
+const privateEventItems = [
+  'Corporate Events',
+  'Birthday Parties',
+  'Brand Activations',
+  'Networking Mixers',
+  'Milestone Celebrations',
+  'Private Buyouts',
+  'Group Dining',
+  'Influencer Gatherings',
+]
+
+const weeklyEvents = [
   {
-    title: 'Fly Fridays',
-    description: 'A polished Friday night setting for cocktails, music, style, and social momentum.',
+    name: 'Fly Fridays',
+    day: 'Every Friday',
+    description:
+      'A polished Friday night setting for cocktails, music, style, and social momentum. Dress the part. Arrive right.',
     image: '/loyal-assets/flyfridays.JPEG',
   },
   {
-    title: 'Thursday Temptations',
-    description: 'A weekly midweek lounge experience with a grown nightlife edge.',
+    name: 'Thursday Temptations',
+    day: 'Every Thursday',
+    description:
+      'A weekly midweek lounge experience with a grown nightlife edge. Unwind before the weekend starts.',
     image: '/loyal-assets/thursday-temptation.jpg',
   },
   {
-    title: 'Saturday Housewerk',
-    description: 'A weekend room built for movement, culture, and a premium social atmosphere.',
+    name: 'Saturday Housewerk',
+    day: 'Every Saturday',
+    description:
+      'A weekend room built for movement, culture, and a premium social atmosphere. The room you earned.',
     image: '/loyal-assets/saturday-housewerk.jpg',
   },
 ]
@@ -28,142 +51,278 @@ const events = [
 export default function Home() {
   return (
     <main>
+      {/* ── HERO ── */}
       <Hero />
 
-      <section className="intro-band" id="experience">
-        <div className="intro-copy">
-          <p className="section-eyebrow">The Social Lounge Experience</p>
-          <h2>Luxury nightlife for the grown, stylish, and connected.</h2>
-        </div>
-        <div className="intro-text">
-          <p>
-            Loyalty Social Ultra Lounge brings a mature, elevated lounge atmosphere to Randallstown
-            and the greater Baltimore market. The room is designed for guests who want more than a
-            night out: they want hospitality, music, premium lighting, strong visuals, and a social
-            club feeling with intention.
-          </p>
-        </div>
+      {/* ── STATEMENT BAND ── */}
+      <section className="editorial-band" id="experience">
+        <p className="eb-label">An Elevated Nightlife Experience</p>
+        <h2 className="eb-heading">
+          Where the Night<br />Begins in Style
+        </h2>
+        <p className="eb-body">
+          Loyalty Social Ultra Lounge brings a mature, curated lounge atmosphere to Randallstown
+          and the greater Baltimore market. A room designed for guests who want more than a night
+          out — they want hospitality, premium lighting, strong visuals, and a social club feeling
+          with intention.
+        </p>
       </section>
 
-      <section className="content-section experience-grid">
-        <div className="media-feature">
-          <img src="/loyal-assets/people-drinks-times.jpg" alt="Guests enjoying drinks at Loyalty Social Ultra Lounge" />
+      {/* ── LOUNGE VIBE MARQUEE ── */}
+      <Marquee label="Perfect For" items={loungeMarqueeItems} />
+
+      {/* ── VIP TABLES SPLIT ── (image left, copy right) */}
+      <section className="split-full img-left" id="vip-tables">
+        <div className="split-image" data-frame>
+          <span className="frame-corner tl" aria-hidden="true" />
+          <span className="frame-corner tr" aria-hidden="true" />
+          <span className="frame-corner bl" aria-hidden="true" />
+          <span className="frame-corner br" aria-hidden="true" />
+          <img
+            src="/loyal-assets/people-drinks-times.jpg"
+            alt="Guests enjoying drinks at Loyalty Social Ultra Lounge"
+          />
         </div>
-        <div className="feature-copy">
-          <p className="section-eyebrow">Food | Drinks | Culture | VIP</p>
-          <h2>Built for elevated evenings and private moments.</h2>
-          <div className="feature-list">
-            {experiences.map((item) => (
-              <p key={item}>{item}</p>
-            ))}
+        <div className="split-copy">
+          <p className="sc-label">VIP Table Experiences</p>
+          <h2 className="sc-heading">
+            Reserve the Room<br />Like It Was Yours
+          </h2>
+          <p className="sc-body">
+            VIP table service at Loyalty Social Ultra Lounge gives your group premium
+            placement, dedicated bottle service, and a more private rhythm inside the
+            lounge. Whether it's date night, a celebration, or a professional gathering —
+            your table is held.
+          </p>
+          <div className="sc-tags">
+            <span className="sc-tag">Premium Placement</span>
+            <span className="sc-tag">Bottle Service</span>
+            <span className="sc-tag">Private Rhythm</span>
+            <span className="sc-tag">Group Dining</span>
           </div>
+          <a href="#reservations" className="btn-gold">
+            Make a Reservation <span className="arrow">→</span>
+          </a>
         </div>
       </section>
 
-      <section className="content-section event-section" id="events">
-        <div className="section-heading compact">
-          <p className="section-eyebrow">Weekly Events</p>
-          <h2>A controlled luxury frame for bold nightlife energy.</h2>
-          <p>
-            Flyers can bring the heat. The website keeps the room premium, focused, and invitation-ready.
-          </p>
+      {/* ── WEEKLY EVENTS ── */}
+      <section className="events-section" id="events">
+        <div className="events-section-head">
+          <p className="es-label">On the Calendar</p>
+          <h2 className="es-heading">Weekly Events</h2>
         </div>
-        <div className="event-grid">
-          {events.map((event) => (
-            <article className="event-card" key={event.title}>
-              <img src={event.image} alt={`${event.title} event flyer`} />
-              <div>
-                <h3>{event.title}</h3>
-                <p>{event.description}</p>
+        <div className="events-grid">
+          {weeklyEvents.map((event) => (
+            <article className="event-tile" key={event.name}>
+              <div className="event-tile-img" data-frame="sm">
+                <span className="frame-corner tl" aria-hidden="true" />
+                <span className="frame-corner tr" aria-hidden="true" />
+                <span className="frame-corner bl" aria-hidden="true" />
+                <span className="frame-corner br" aria-hidden="true" />
+                <img src={event.image} alt={`${event.name} event at Loyalty Social Ultra Lounge`} />
+              </div>
+              <div className="event-tile-copy">
+                <p className="event-tile-day">{event.day}</p>
+                <h3 className="event-tile-name">{event.name}</h3>
+                <p className="event-tile-desc">{event.description}</p>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="content-section split-section" id="private-events">
-        <div className="private-copy">
-          <p className="section-eyebrow">Private Events</p>
-          <h2>Host the room like it was reserved for your circle.</h2>
-          <p>
-            From brand activations and professional mixers to birthday celebrations and private
-            nightly experiences, Loyalty Social Ultra Lounge gives hosts a polished environment
-            with a nightlife pulse.
+      {/* ── WEEKLY SPECIALS FLYERS ── */}
+      <section className="flyers-section" aria-label="Weekly specials and promotions">
+        <div className="flyers-head">
+          <p className="es-label">Happening Weekly</p>
+          <h2 className="es-heading">Specials &amp; Promos</h2>
+        </div>
+        <div className="flyers-grid">
+          <div className="flyer-tile" data-frame>
+            <span className="frame-corner tl" aria-hidden="true" />
+            <span className="frame-corner tr" aria-hidden="true" />
+            <span className="frame-corner bl" aria-hidden="true" />
+            <span className="frame-corner br" aria-hidden="true" />
+            <img
+              src="/loyal-assets/flyer-happy-fridays.jpeg"
+              alt="Happy Fridays — $5 drink specials and $7 food at Loyalty Social Ultra Lounge"
+            />
+          </div>
+          <div className="flyer-tile" data-frame>
+            <span className="frame-corner tl" aria-hidden="true" />
+            <span className="frame-corner tr" aria-hidden="true" />
+            <span className="frame-corner bl" aria-hidden="true" />
+            <span className="frame-corner br" aria-hidden="true" />
+            <img
+              src="/loyal-assets/flyer-karaoke-saturday.jpeg"
+              alt="Karaoke on Saturday — food specials 4PM–7PM at Loyalty Social Ultra Lounge"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRIVATE EVENTS SPLIT ── (copy left, image right) */}
+      <section className="split-full img-right" id="private-events">
+        <div className="split-copy">
+          <p className="sc-label">Private Event Spaces</p>
+          <h2 className="sc-heading">
+            Host Your Circle<br />in Our Room
+          </h2>
+          <p className="sc-body">
+            From brand activations and professional mixers to birthday celebrations and
+            private nightly buyouts, Loyalty Social Ultra Lounge gives hosts a polished
+            environment with a nightlife pulse. The room is yours to shape.
           </p>
-          <div className="service-row">
-            <span>Professional mixers</span>
-            <span>Private celebrations</span>
-            <span>VIP table service</span>
-            <span>Social club nights</span>
+          <div className="sc-tags">
+            <span className="sc-tag">Professional Mixers</span>
+            <span className="sc-tag">Private Celebrations</span>
+            <span className="sc-tag">Brand Activations</span>
+            <span className="sc-tag">Full Buyouts</span>
           </div>
+          <a href="#reservations" className="btn-gold">
+            Inquire About Private Events <span className="arrow">→</span>
+          </a>
         </div>
-        <div className="image-stack" aria-label="Lounge imagery">
-          <img src="/loyal-assets/new-loyalty.PNG" alt="Loyalty Social Ultra Lounge interior with black and gold styling" />
-          <img src="/loyal-assets/loyaltysocial.jpg" alt="Premium lounge seating and lighting at Loyalty Social Ultra Lounge" />
+        <div className="split-image" data-frame>
+          <span className="frame-corner tl" aria-hidden="true" />
+          <span className="frame-corner tr" aria-hidden="true" />
+          <span className="frame-corner bl" aria-hidden="true" />
+          <span className="frame-corner br" aria-hidden="true" />
+          <img
+            src="/loyal-assets/calvin-celebration.JPG"
+            alt="Private celebration at Loyalty Social Ultra Lounge"
+          />
         </div>
       </section>
 
-      <section className="content-section menu-section">
-        <div className="section-heading compact">
-          <p className="section-eyebrow">Kitchen & Bar</p>
-          <h2>Food and drinks with a premium nightlife rhythm.</h2>
+      {/* ── PRIVATE EVENTS MARQUEE ── */}
+      <Marquee label="Ideal For" items={privateEventItems} />
+
+      {/* ── KITCHEN & BAR ── */}
+      <section className="menu-band" id="menu">
+        {/* Food image placeholder — swap src for real food photo when ready */}
+        <div className="menu-band-image" data-frame>
+          <span className="frame-corner tl" aria-hidden="true" />
+          <span className="frame-corner tr" aria-hidden="true" />
+          <span className="frame-corner bl" aria-hidden="true" />
+          <span className="frame-corner br" aria-hidden="true" />
+          <img
+            src="/loyal-assets/food-blackened-fish.jpeg"
+            alt="Blackened fish over pesto pasta at Loyalty Social Ultra Lounge"
+          />
         </div>
-        <div className="menu-layout">
-          <img src="/loyal-assets/three-three.png" alt="Loyalty Social food and drink presentation" />
-          <div className="menu-panel">
-            <h3>For the table, the toast, and the after-work unwind.</h3>
-            <p>
-              Pair the lounge experience with food, drinks, and curated hospitality built for groups,
-              celebrations, and guests who came dressed for the night.
+        <div className="menu-band-copy">
+          <p className="mb-label">Kitchen & Bar</p>
+          <h2 className="mb-heading">
+            Food &amp; Drinks<br />Done Right
+          </h2>
+          <p className="mb-body">
+            Pair the lounge experience with a curated food and drink menu built for groups,
+            celebrations, and guests who came dressed for the night. From shareable plates to
+            premium cocktails — every detail is on point.
+          </p>
+          <a href="/menu" className="btn-gold">
+            View Full Menu <span className="arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      {/* ── FOOD PHOTO TRIO ── */}
+      <div className="food-section" aria-label="Food and drink highlights">
+        <div className="food-tile" data-frame="sm">
+          <span className="frame-corner tl" aria-hidden="true" />
+          <span className="frame-corner tr" aria-hidden="true" />
+          <span className="frame-corner bl" aria-hidden="true" />
+          <span className="frame-corner br" aria-hidden="true" />
+          <img
+            src="/loyal-assets/jerk-chicken.jpeg"
+            alt="Jerk chicken at Loyalty Social Ultra Lounge"
+          />
+          <div className="food-label-overlay">Jerk Chicken</div>
+        </div>
+        <div className="food-tile" data-frame="sm">
+          <span className="frame-corner tl" aria-hidden="true" />
+          <span className="frame-corner tr" aria-hidden="true" />
+          <span className="frame-corner bl" aria-hidden="true" />
+          <span className="frame-corner br" aria-hidden="true" />
+          <img
+            src="/loyal-assets/teriyaki-salmon.jpeg"
+            alt="Teriyaki salmon at Loyalty Social Ultra Lounge"
+          />
+          <div className="food-label-overlay">Teriyaki Salmon</div>
+        </div>
+        <div className="food-tile" data-frame="sm">
+          <span className="frame-corner tl" aria-hidden="true" />
+          <span className="frame-corner tr" aria-hidden="true" />
+          <span className="frame-corner bl" aria-hidden="true" />
+          <span className="frame-corner br" aria-hidden="true" />
+          <img
+            src="/loyal-assets/loyaltysocial.jpg"
+            alt="The lounge at Loyalty Social Ultra Lounge"
+          />
+          <div className="food-label-overlay">The Lounge</div>
+        </div>
+      </div>
+
+      {/* ── RESERVATIONS ── */}
+      <section className="reservation-section" id="reservations">
+        <div className="reservation-info">
+          <p className="ri-label">Reservations & Booking</p>
+          <h2 className="ri-heading">
+            Claim Your<br />Table Tonight
+          </h2>
+          <p className="ri-body">
+            Request VIP tables, private event nights, or a professional mixer.
+            Share your date, guest count, and the experience you have in mind —
+            the team will follow up with availability and options.
+          </p>
+          <div className="location-block">
+            <p><strong>Address</strong><br />8521 Liberty Rd, Randallstown, MD 21133</p>
+            <p><strong>Market</strong><br />Randallstown · Baltimore County · Baltimore, MD</p>
+            <p><strong>Age Policy</strong><br />21+ | Valid ID Required</p>
+          </div>
+        </div>
+        <div className="reservation-form-wrap">
+          <ReservationForm />
+        </div>
+      </section>
+
+      {/* ── FOOTER ── */}
+      <footer className="site-footer">
+        <div className="footer-main">
+          <div className="footer-brand">
+            <p className="fb-name">Loyalty Social</p>
+            <p className="fb-tagline">Ultra Lounge</p>
+            <p className="fb-address">
+              8521 Liberty Rd<br />
+              Randallstown, MD 21133<br />
+              Baltimore County
             </p>
-            <a href="#reservations" className="button secondary">Plan a Visit</a>
+          </div>
+          <nav className="footer-nav" aria-label="Footer navigation">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#experience">The Lounge</a></li>
+              <li><a href="#events">Weekly Events</a></li>
+              <li><a href="#private-events">Private Events</a></li>
+              <li><a href="/menu">Menu</a></li>
+              <li><a href="#reservations">Reservations</a></li>
+              <li><a href="/birthday">Birthday Packages</a></li>
+            </ul>
+          </nav>
+          <div className="footer-hours">
+            <h4>Hours</h4>
+            <div className="hour-row"><span>Thursday</span><span>9pm – 2am</span></div>
+            <div className="hour-row"><span>Friday</span><span>9pm – 2am</span></div>
+            <div className="hour-row"><span>Saturday</span><span>9pm – 2am</span></div>
+            <div className="hour-row"><span>Private Events</span><span>By Appointment</span></div>
           </div>
         </div>
-      </section>
-
-      <section className="content-section contact-section" id="reservations">
-        <div className="section-heading">
-          <p className="section-eyebrow">Reservations & Booking</p>
-          <h2>Request VIP tables, private nights, or a professional mixer.</h2>
+        <div className="footer-bottom">
+          <p>© {new Date().getFullYear()} Loyalty Social Ultra Lounge. All rights reserved.</p>
+          <span className="age-badge">21+ Only</span>
         </div>
-        <div className="grid-two-columns contact-grid">
-          <div className="contact-copy">
-            <p>
-              Share the date, guest count, and experience you have in mind. The team will follow up
-              with availability, table options, and private event details.
-            </p>
-            <div className="contact-details">
-              <p>
-                <strong>Address:</strong> 8521 Liberty Rd, Randallstown, MD 21133
-              </p>
-              <p>
-                <strong>Market:</strong> Randallstown, Baltimore County, Baltimore, Maryland
-              </p>
-            </div>
-          </div>
-
-          <form className="contact-form" action="/api/contact" method="post">
-            <label>
-              Name
-              <input name="name" type="text" placeholder="Your name" required />
-            </label>
-            <label>
-              Email
-              <input name="email" type="email" placeholder="you@example.com" required />
-            </label>
-            <label>
-              Reservation or event details
-              <textarea name="message" placeholder="Date, guest count, table request, or private event details" required />
-            </label>
-            <button type="submit" className="button primary">
-              Send Request
-            </button>
-          </form>
-        </div>
-      </section>
-
-      <footer className="footer">
-        <p>© {new Date().getFullYear()} Loyalty Social Ultra Lounge | 8521 Liberty Rd, Randallstown, MD 21133</p>
       </footer>
     </main>
   )
