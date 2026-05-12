@@ -1,0 +1,299 @@
+/* ── FLYER CAROUSEL — The Velvet Rope ─────────────────────────────────────── */
+
+.section {
+  background: #050505;
+  overflow: hidden;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+/* Ambient gold glow at bottom */
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A24A55, transparent);
+}
+
+/* ── HEAD ──────────────────────────────────────────────────────────────────── */
+.head {
+  text-align: center;
+  padding: 80px 48px 64px;
+  position: relative;
+}
+
+.head::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: #C9A24A;
+  margin: 28px auto 0;
+  opacity: 0.6;
+}
+
+.label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: #C9A24A;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 7rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 0.9;
+  color: #F5F0E6;
+}
+
+.heading span {
+  color: #C9A24A;
+  font-style: italic;
+}
+
+/* ── SCROLL TRACK ──────────────────────────────────────────────────────────── */
+.track {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 20px 80px 40px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+  /* allow shimmer glow to bleed */
+  -ms-overflow-style: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track.dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
+/* ── CARD ──────────────────────────────────────────────────────────────────── */
+.card {
+  flex: 0 0 auto;
+  width: min(400px, 80vw);
+  scroll-snap-align: center;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.012);
+  z-index: 2;
+}
+
+/* ── SHIMMERING GOLD BORDER ────────────────────────────────────────────────── */
+.shimmerBorder {
+  position: relative;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+/* Animated gradient border */
+.shimmerBorder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #6b4c10,
+    #9F7A28,
+    #C9A24A,
+    #F4D06F,
+    #fff8dc,
+    #F4D06F,
+    #C9A24A,
+    #9F7A28,
+    #6b4c10
+  );
+  background-size: 300% 100%;
+  animation: shimmer-border 2.8s linear infinite;
+  border-radius: inherit;
+}
+
+/* Outer glow pulse */
+.shimmerBorder::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #C9A24A30,
+    #F4D06F55,
+    #C9A24A30,
+    transparent
+  );
+  background-size: 300% 100%;
+  animation: shimmer-border 2.8s linear infinite;
+  animation-delay: -1.4s;
+  filter: blur(8px);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+@keyframes shimmer-border {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 300% 0%; }
+}
+
+/* ── CARD INNER ────────────────────────────────────────────────────────────── */
+.cardInner {
+  position: relative;
+  z-index: 1;
+  background: #050505;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.cardInner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  pointer-events: none;
+}
+
+.card:hover .cardInner img {
+  transform: scale(1.03);
+}
+
+/* ── CAPTION OVERLAY ───────────────────────────────────────────────────────── */
+.cardCaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 20px 18px;
+  background: linear-gradient(to top, #050505ee 0%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.card:hover .cardCaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardLabel {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9A24A;
+}
+
+.cardTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #F5F0E6;
+  letter-spacing: 0.04em;
+}
+
+/* ── NAVIGATION ARROWS ─────────────────────────────────────────────────────── */
+.arrows {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #C9A24A55;
+  background: transparent;
+  color: #C9A24A;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, color 0.25s;
+  font-size: 1.1rem;
+  letter-spacing: 0;
+}
+
+.arrow:hover {
+  border-color: #C9A24A;
+  background: #C9A24A12;
+  color: #F4D06F;
+}
+
+.arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+/* ── DOT INDICATORS ────────────────────────────────────────────────────────── */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.dot {
+  width: 24px;
+  height: 2px;
+  background: #C9A24A33;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, width 0.3s;
+}
+
+.dotActive {
+  background: #C9A24A;
+  width: 40px;
+}
+
+/* ── FADE-IN REVEAL ────────────────────────────────────────────────────────── */
+.card {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: card-reveal 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.25s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+.card:nth-child(4) { animation-delay: 0.55s; }
+
+@keyframes card-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .head { padding: 56px 24px 48px; }
+  .track { padding: 16px 24px 32px; gap: 24px; }
+  .card { width: min(320px, 85vw); }
+}

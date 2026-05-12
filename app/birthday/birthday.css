@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #0B0B0B;
+}
+
+/* ── Screen wrapper ── */
+.screen-bg {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #1c1209 0%, #0B0B0B 100%);
+  padding: 24px 20px;
+  gap: 24px;
+}
+
+/* Scale card to fit viewport on screen */
+.card-scale-wrap {
+  transform: scale(0.72);
+  transform-origin: top center;
+  margin-bottom: calc((10in * (0.72 - 1)));
+}
+
+/* ── Card: 8×10 in ── */
+.card-outer {
+  width: 8in;
+  height: 10in;
+  background:
+    radial-gradient(ellipse at 50% 28%, rgba(201,162,74,0.09) 0%, transparent 60%),
+    linear-gradient(170deg, #111008 0%, #0D0D0B 45%, #111008 100%);
+  border: 3px solid #C9A24A;
+  box-shadow:
+    0 0 0 8px #0D0D0B,
+    0 0 0 10px rgba(201,162,74,0.45),
+    0 40px 100px rgba(0,0,0,0.9);
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  /* NO overflow:hidden — lets Great Vibes script breathe */
+}
+
+/* shimmer overlay */
+.card-outer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(244,208,111,0.04) 0%,
+    transparent 40%,
+    rgba(201,162,74,0.04) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Inner gold frame ── */
+.card-inner {
+  width: calc(100% - 36px);
+  margin: 18px;
+  border: 1px solid rgba(201,162,74,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 40px 24px;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* ── Corner accents ── */
+.corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-color: #C9A24A;
+  border-style: solid;
+}
+.corner-tl { top: 12px;    left: 12px;  border-width: 2px 0 0 2px; }
+.corner-tr { top: 12px;    right: 12px; border-width: 2px 2px 0 0; }
+.corner-bl { bottom: 12px; left: 12px;  border-width: 0 0 2px 2px; }
+.corner-br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+/* ── Ornament helpers ── */
+.orn-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.orn-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,162,74,0.6), transparent);
+  display: block;
+}
+.orn-diamond { font-size: 8px;  color: #C9A24A; line-height: 1; }
+.orn-star    { font-size: 9px;  color: #C9A24A; line-height: 1; }
+
+/* ── Top section ── */
+.top-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.vip-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.38em;
+  color: #C9A24A;
+  text-transform: uppercase;
+}
+
+/* ── Logo ── */
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 118px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 20px rgba(201,162,74,0.35));
+}
+
+/* ── Mid divider ── */
+.mid-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 85%;
+}
+
+/* ── Birthday section ── */
+.bday-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  /* extra horizontal breathing room for Great Vibes swashes */
+  width: 100%;
+  padding: 0 12px;
+  overflow: visible;
+}
+
+.presents-text {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  color: rgba(201,162,74,0.65);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.happy-bday {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 82px;
+  font-weight: 300;
+  font-style: italic;
+  background: linear-gradient(180deg, #F4D06F 0%, #C9A24A 55%, #9F7A28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  /* ensure gradient renders on print */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 100px;
+  font-weight: 400;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4D06F 28%, #C9A24A 68%, #9F7A28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* generous line-height so ascenders/descenders aren't clipped */
+  line-height: 1.4;
+  /* padding keeps swashes from hitting the edge */
+  padding: 0 32px;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 2px 12px rgba(201,162,74,0.45));
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.name-under {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 70%;
+  margin-top: 2px;
+}
+.name-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A24A, transparent);
+  display: block;
+}
+.name-diamond { font-size: 9px; color: #C9A24A; }
+
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.45em;
+  color: #C9A24A;
+  text-transform: uppercase;
+  margin-top: 12px;
+  padding: 9px 28px;
+  border: 1px solid rgba(201,162,74,0.4);
+}
+
+/* ── Bottom section ── */
+.bottom-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.bottom-copy {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-style: italic;
+  color: rgba(201,162,74,0.6);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+/* ── Print button (screen only) ── */
+.print-btn {
+  background: #C9A24A;
+  color: #0B0B0B;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 12px 36px;
+  cursor: pointer;
+  border-radius: 2px;
+  position: relative;
+  z-index: 10;
+}
+.print-btn:hover { background: #F4D06F; }
+
+/* ── Print ── */
+@media print {
+  @page {
+    size: 8in 10in;
+    margin: 0;
+  }
+
+  body, .screen-bg {
+    background: black !important;
+    min-height: unset !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    display: block !important;
+  }
+
+  .print-btn { display: none !important; }
+
+  .card-scale-wrap {
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  .card-outer {
+    width: 8in !important;
+    height: 10in !important;
+    box-shadow: none !important;
+    border: 8px solid #C9A24A !important;
+    margin: 0 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
