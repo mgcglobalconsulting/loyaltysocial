@@ -1,10 +1,18 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 export function Hero() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const close = () => setOpen(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <section className="hero-section" id="top">
@@ -20,9 +28,12 @@ export function Hero() {
       <div className="hero-shade" />
 
       {/* ── Navigation ── */}
-      <nav className="site-nav" aria-label="Primary navigation">
+      <nav
+        className={`site-nav${scrolled ? ' site-nav--scrolled' : ''}`}
+        aria-label="Primary navigation"
+      >
         <a className="brand-mark" href="#top" aria-label="Loyalty Lounge Md home">
-          <span className="brand-main">Loyalty Social</span>
+          <span className="brand-main">Loyalty Lounge Md</span>
           <span className="brand-sub">Ultra Lounge · Randallstown, MD</span>
         </a>
 
@@ -66,22 +77,47 @@ export function Hero() {
 
       {/* ── Hero Copy ── */}
       <div className="hero-body">
-        <p className="hero-eyebrow">Baltimore County · Randallstown · 21+</p>
-        <h1 className="hero-title">
+        <motion.p
+          className="hero-eyebrow"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+        >
+          Baltimore County · Randallstown · 21+
+        </motion.p>
+
+        <motion.h1
+          className="hero-title"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
           Loyalty<br />Social
-        </h1>
-        <p className="hero-tagline">
+        </motion.h1>
+
+        <motion.p
+          className="hero-tagline"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.65, ease: 'easeOut' }}
+        >
           An elevated social lounge built for the grown, stylish, and connected.
           Food, drinks, VIP tables, and weekly events curated for a professional nightlife crowd.
-        </p>
-        <div className="hero-ctas">
+        </motion.p>
+
+        <motion.div
+          className="hero-ctas"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.85, ease: 'easeOut' }}
+        >
           <a href="#reservations" className="btn-gold">
             Reserve VIP <span className="arrow">→</span>
           </a>
           <a href="#events" className="btn-outline">
             View Events
           </a>
-        </div>
+        </motion.div>
       </div>
 
       <div className="hero-address">8521 Liberty Rd, Randallstown, MD 21133</div>

@@ -2,6 +2,7 @@ import { Hero } from '../components/Hero'
 import { Marquee } from '../components/Marquee'
 import { ReservationForm } from '../components/ReservationForm'
 import { FlyerCarousel } from '../components/FlyerCarousel'
+import { Reveal, StaggerGroup, StaggerItem } from '../components/Reveal'
 
 const loungeMarqueeItems = [
   'Birthday Celebrations',
@@ -57,16 +58,20 @@ export default function Home() {
 
       {/* ── STATEMENT BAND ── */}
       <section className="editorial-band" id="experience">
-        <p className="eb-label">An Elevated Nightlife Experience</p>
-        <h2 className="eb-heading">
-          Where the Night<br />Begins in Style
-        </h2>
-        <p className="eb-body">
-          Loyalty Lounge Md brings a mature, curated lounge atmosphere to Randallstown
-          and the greater Baltimore market. A room designed for guests who want more than a night
-          out — they want hospitality, premium lighting, strong visuals, and a social club feeling
-          with intention.
-        </p>
+        <Reveal><p className="eb-label">An Elevated Nightlife Experience</p></Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="eb-heading">
+            Where the Night<br />Begins in Style
+          </h2>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="eb-body">
+            Loyalty Lounge Md brings a mature, curated lounge atmosphere to Randallstown
+            and the greater Baltimore market. A room designed for guests who want more than a night
+            out — they want hospitality, premium lighting, strong visuals, and a social club feeling
+            with intention.
+          </p>
+        </Reveal>
       </section>
 
       {/* ── LOUNGE VIBE MARQUEE ── */}
@@ -74,63 +79,75 @@ export default function Home() {
 
       {/* ── VIP TABLES SPLIT ── (image left, copy right) */}
       <section className="split-full img-left" id="vip-tables">
-        <div className="split-image" data-frame>
-          <span className="frame-corner tl" aria-hidden="true" />
-          <span className="frame-corner tr" aria-hidden="true" />
-          <span className="frame-corner bl" aria-hidden="true" />
-          <span className="frame-corner br" aria-hidden="true" />
-          <img
-            src="/loyal-assets/people-drinks-times.jpg"
-            alt="Guests enjoying drinks at Loyalty Lounge Md"
-          />
-        </div>
-        <div className="split-copy">
-          <p className="sc-label">VIP Table Experiences</p>
-          <h2 className="sc-heading">
-            Reserve the Room<br />Like It Was Yours
-          </h2>
-          <p className="sc-body">
-            VIP table service at Loyalty Lounge Md gives your group premium
-            placement, dedicated bottle service, and a more private rhythm inside the
-            lounge. Whether it's date night, a celebration, or a professional gathering —
-            your table is held.
-          </p>
-          <div className="sc-tags">
-            <span className="sc-tag">Premium Placement</span>
-            <span className="sc-tag">Bottle Service</span>
-            <span className="sc-tag">Private Rhythm</span>
-            <span className="sc-tag">Group Dining</span>
+        <Reveal className="split-image" delay={0}>
+          <div data-frame>
+            <span className="frame-corner tl" aria-hidden="true" />
+            <span className="frame-corner tr" aria-hidden="true" />
+            <span className="frame-corner bl" aria-hidden="true" />
+            <span className="frame-corner br" aria-hidden="true" />
+            <img
+              src="/loyal-assets/people-drinks-times.jpg"
+              alt="Guests enjoying drinks at Loyalty Lounge Md"
+            />
           </div>
-          <a href="#reservations" className="btn-gold">
-            Make a Reservation <span className="arrow">→</span>
-          </a>
+        </Reveal>
+        <div className="split-copy">
+          <Reveal><p className="sc-label">VIP Table Experiences</p></Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="sc-heading">
+              Reserve the Room<br />Like It Was Yours
+            </h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="sc-body">
+              VIP table service at Loyalty Lounge Md gives your group premium
+              placement, dedicated bottle service, and a more private rhythm inside the
+              lounge. Whether it's date night, a celebration, or a professional gathering —
+              your table is held.
+            </p>
+          </Reveal>
+          <Reveal delay={0.3}>
+            <div className="sc-tags">
+              <span className="sc-tag">Premium Placement</span>
+              <span className="sc-tag">Bottle Service</span>
+              <span className="sc-tag">Private Rhythm</span>
+              <span className="sc-tag">Group Dining</span>
+            </div>
+          </Reveal>
+          <Reveal delay={0.4}>
+            <a href="#reservations" className="btn-gold">
+              Make a Reservation <span className="arrow">→</span>
+            </a>
+          </Reveal>
         </div>
       </section>
 
       {/* ── WEEKLY EVENTS ── */}
       <section className="events-section" id="events">
         <div className="events-section-head">
-          <p className="es-label">On the Calendar</p>
-          <h2 className="es-heading">Weekly Events</h2>
+          <Reveal><p className="es-label">On the Calendar</p></Reveal>
+          <Reveal delay={0.1}><h2 className="es-heading">Weekly Events</h2></Reveal>
         </div>
-        <div className="events-grid">
+        <StaggerGroup className="events-grid">
           {weeklyEvents.map((event) => (
-            <article className="event-tile" key={event.name}>
-              <div className="event-tile-img" data-frame="sm">
-                <span className="frame-corner tl" aria-hidden="true" />
-                <span className="frame-corner tr" aria-hidden="true" />
-                <span className="frame-corner bl" aria-hidden="true" />
-                <span className="frame-corner br" aria-hidden="true" />
-                <img src={event.image} alt={`${event.name} event at Loyalty Lounge Md`} />
-              </div>
-              <div className="event-tile-copy">
-                <p className="event-tile-day">{event.day}</p>
-                <h3 className="event-tile-name">{event.name}</h3>
-                <p className="event-tile-desc">{event.description}</p>
-              </div>
-            </article>
+            <StaggerItem key={event.name}>
+              <article className="event-tile">
+                <div className="event-tile-img" data-frame="sm">
+                  <span className="frame-corner tl" aria-hidden="true" />
+                  <span className="frame-corner tr" aria-hidden="true" />
+                  <span className="frame-corner bl" aria-hidden="true" />
+                  <span className="frame-corner br" aria-hidden="true" />
+                  <img src={event.image} alt={`${event.name} event at Loyalty Lounge Md`} />
+                </div>
+                <div className="event-tile-copy">
+                  <p className="event-tile-day">{event.day}</p>
+                  <h3 className="event-tile-name">{event.name}</h3>
+                  <p className="event-tile-desc">{event.description}</p>
+                </div>
+              </article>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGroup>
       </section>
 
       {/* ── WEEKLY SPECIALS CAROUSEL ── */}
@@ -139,35 +156,45 @@ export default function Home() {
       {/* ── PRIVATE EVENTS SPLIT ── (copy left, image right) */}
       <section className="split-full img-right" id="private-events">
         <div className="split-copy">
-          <p className="sc-label">Private Event Spaces</p>
-          <h2 className="sc-heading">
-            Host Your Circle<br />in Our Room
-          </h2>
-          <p className="sc-body">
-            From brand activations and professional mixers to birthday celebrations and
-            private nightly buyouts, Loyalty Lounge Md gives hosts a polished
-            environment with a nightlife pulse. The room is yours to shape.
-          </p>
-          <div className="sc-tags">
-            <span className="sc-tag">Professional Mixers</span>
-            <span className="sc-tag">Private Celebrations</span>
-            <span className="sc-tag">Brand Activations</span>
-            <span className="sc-tag">Full Buyouts</span>
+          <Reveal><p className="sc-label">Private Event Spaces</p></Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="sc-heading">
+              Host Your Circle<br />in Our Room
+            </h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p className="sc-body">
+              From brand activations and professional mixers to birthday celebrations and
+              private nightly buyouts, Loyalty Lounge Md gives hosts a polished
+              environment with a nightlife pulse. The room is yours to shape.
+            </p>
+          </Reveal>
+          <Reveal delay={0.3}>
+            <div className="sc-tags">
+              <span className="sc-tag">Professional Mixers</span>
+              <span className="sc-tag">Private Celebrations</span>
+              <span className="sc-tag">Brand Activations</span>
+              <span className="sc-tag">Full Buyouts</span>
+            </div>
+          </Reveal>
+          <Reveal delay={0.4}>
+            <a href="#reservations" className="btn-gold">
+              Inquire About Private Events <span className="arrow">→</span>
+            </a>
+          </Reveal>
+        </div>
+        <Reveal className="split-image" delay={0.15}>
+          <div data-frame>
+            <span className="frame-corner tl" aria-hidden="true" />
+            <span className="frame-corner tr" aria-hidden="true" />
+            <span className="frame-corner bl" aria-hidden="true" />
+            <span className="frame-corner br" aria-hidden="true" />
+            <img
+              src="/loyal-assets/calvin-celebration.JPG"
+              alt="Private celebration at Loyalty Lounge Md"
+            />
           </div>
-          <a href="#reservations" className="btn-gold">
-            Inquire About Private Events <span className="arrow">→</span>
-          </a>
-        </div>
-        <div className="split-image" data-frame>
-          <span className="frame-corner tl" aria-hidden="true" />
-          <span className="frame-corner tr" aria-hidden="true" />
-          <span className="frame-corner bl" aria-hidden="true" />
-          <span className="frame-corner br" aria-hidden="true" />
-          <img
-            src="/loyal-assets/calvin-celebration.JPG"
-            alt="Private celebration at Loyalty Lounge Md"
-          />
-        </div>
+        </Reveal>
       </section>
 
       {/* ── PRIVATE EVENTS MARQUEE ── */}
