@@ -61,7 +61,7 @@ export function SOPLayout({ department, role, objective, phases }: SOPLayoutProp
 
           {/* Venue label */}
           <p className="text-[#C9A24A] text-[10px] uppercase tracking-[0.55em] -mt-2">
-            Loyalty Social Ultra Lounge · Staff SOP
+            Loyalty Lounge Md · Staff SOP
           </p>
 
           {/* Department name */}
@@ -88,7 +88,7 @@ export function SOPLayout({ department, role, objective, phases }: SOPLayoutProp
       <div className="hidden print:flex items-start justify-between border-b-2 border-[#C9A24A] pb-4 mb-6">
         <div>
           <p className="text-[10px] uppercase tracking-[0.35em] text-gray-500 mb-0.5">
-            Loyalty Social Ultra Lounge · Internal SOP
+            Loyalty Lounge Md · Internal SOP
           </p>
           <h1 className="text-3xl font-black text-black">{department}</h1>
           <p className="text-xs text-gray-500 uppercase tracking-widest mt-0.5">{role}</p>
@@ -157,7 +157,7 @@ export function SOPLayout({ department, role, objective, phases }: SOPLayoutProp
             ))}
           </div>
           <div className="flex justify-between text-[10px] text-[#383838] print:text-gray-400">
-            <span>Loyalty Social Ultra Lounge · Baltimore, MD · Internal Use Only</span>
+            <span>Loyalty Lounge Md · Baltimore, MD · Internal Use Only</span>
             <span>Confidential SOP Document</span>
           </div>
         </div>

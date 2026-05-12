@@ -21,7 +21,7 @@ export function Hero() {
 
       {/* ── Navigation ── */}
       <nav className="site-nav" aria-label="Primary navigation">
-        <a className="brand-mark" href="#top" aria-label="Loyalty Social Ultra Lounge home">
+        <a className="brand-mark" href="#top" aria-label="Loyalty Lounge Md home">
           <span className="brand-main">Loyalty Social</span>
           <span className="brand-sub">Ultra Lounge · Randallstown, MD</span>
         </a>

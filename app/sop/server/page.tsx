@@ -63,7 +63,7 @@ export default function ServerSOP() {
     <SOPLayout
       department="Server / Bottle Service"
       role="Floor Service · Table Management · Guest Experience"
-      objective="Deliver seamless, luxury-level table service and bottle presentations that reflect the upscale identity of Loyalty Social Ultra Lounge."
+      objective="Deliver seamless, luxury-level table service and bottle presentations that reflect the upscale identity of Loyalty Lounge Md."
       phases={phases}
     />
   )

@@ -54,14 +54,14 @@ export default function PoliciesPage() {
 
       <Policy title="Social Media" items={[
         'Do not post interior photos or video of guests without explicit consent.',
-        'Do not represent or speak on behalf of Loyalty Social Ultra Lounge on any public platform without authorization.',
+        'Do not represent or speak on behalf of Loyalty Lounge Md on any public platform without authorization.',
         'Negative posts about the venue, management, or coworkers are grounds for disciplinary action.',
       ]} />
 
       <div className="mt-10 bg-[#0B0B0B] border border-[#242424] rounded-lg px-6 py-5">
         <p className="text-[#C9A24A] text-xs uppercase tracking-widest mb-3">Acknowledgment</p>
         <p className="text-[#9F7A28] text-xs mb-6">
-          By signing below, I acknowledge that I have read, understand, and agree to comply with all Loyalty Social Ultra Lounge workplace policies. I understand that violations may result in disciplinary action up to and including termination.
+          By signing below, I acknowledge that I have read, understand, and agree to comply with all Loyalty Lounge Md workplace policies. I understand that violations may result in disciplinary action up to and including termination.
         </p>
         <div className="grid grid-cols-2 gap-8">
           <div>

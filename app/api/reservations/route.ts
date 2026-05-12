@@ -49,7 +49,7 @@ export async function POST(request: Request) {
   const html = `
     <div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;background:#0b0b0b;color:#f5f0e6;border:1px solid #c9a24a;">
       <div style="background:#050505;padding:28px 32px;border-bottom:1px solid #c9a24a;">
-        <p style="margin:0;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#c9a24a;">Loyalty Social Ultra Lounge</p>
+        <p style="margin:0;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#c9a24a;">Loyalty Lounge Md</p>
         <h1 style="margin:10px 0 0;font-size:26px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#f5f0e6;">New ${typeLabel.charAt(0).toUpperCase() + typeLabel.slice(1)} Request</h1>
       </div>
 
@@ -93,7 +93,7 @@ export async function POST(request: Request) {
       </div>
 
       <div style="padding:16px 32px;background:#050505;border-top:1px solid rgba(201,162,74,0.22);">
-        <p style="margin:0;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,240,230,0.38);">Loyalty Social Ultra Lounge · 8521 Liberty Rd, Randallstown MD 21133 · ${PHONE}</p>
+        <p style="margin:0;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,240,230,0.38);">Loyalty Lounge Md · 8521 Liberty Rd, Randallstown MD 21133 · ${PHONE}</p>
       </div>
     </div>
   `

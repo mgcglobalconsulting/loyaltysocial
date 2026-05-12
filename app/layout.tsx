@@ -17,14 +17,14 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Loyalty Social Ultra Lounge | Upscale Nightlife · Randallstown, MD',
+  title: 'Loyalty Lounge Md | Upscale Nightlife · Randallstown, MD',
   description:
-    'Loyalty Social Ultra Lounge — an elevated social lounge serving Baltimore County. VIP tables, private events, professional mixers, food, drinks, and weekly events in Randallstown, MD.',
+    'Loyalty Lounge Md — an elevated social lounge serving Baltimore County. VIP tables, private events, professional mixers, food, drinks, and weekly events in Randallstown, MD.',
   openGraph: {
-    title: 'Loyalty Social Ultra Lounge',
+    title: 'Loyalty Lounge Md',
     description: 'Upscale nightlife, VIP tables, private events in Randallstown, MD.',
     url: 'https://loyaltysocialmv.com',
-    siteName: 'Loyalty Social Ultra Lounge',
+    siteName: 'Loyalty Lounge Md',
     locale: 'en_US',
     type: 'website',
   },

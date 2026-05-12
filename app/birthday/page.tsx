@@ -20,7 +20,7 @@ export default function BirthdayPage() {
             <div className="orn-row">
               <span className="orn-line" /><span className="orn-diamond">◆</span><span className="orn-line" />
             </div>
-            <p className="vip-label">Loyalty Social Ultra Lounge</p>
+            <p className="vip-label">Loyalty Lounge Md</p>
             <div className="orn-row">
               <span className="orn-line" /><span className="orn-diamond">◆</span><span className="orn-line" />
             </div>

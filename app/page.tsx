@@ -61,7 +61,7 @@ export default function Home() {
           Where the Night<br />Begins in Style
         </h2>
         <p className="eb-body">
-          Loyalty Social Ultra Lounge brings a mature, curated lounge atmosphere to Randallstown
+          Loyalty Lounge Md brings a mature, curated lounge atmosphere to Randallstown
           and the greater Baltimore market. A room designed for guests who want more than a night
           out — they want hospitality, premium lighting, strong visuals, and a social club feeling
           with intention.
@@ -80,7 +80,7 @@ export default function Home() {
           <span className="frame-corner br" aria-hidden="true" />
           <img
             src="/loyal-assets/people-drinks-times.jpg"
-            alt="Guests enjoying drinks at Loyalty Social Ultra Lounge"
+            alt="Guests enjoying drinks at Loyalty Lounge Md"
           />
         </div>
         <div className="split-copy">
@@ -89,7 +89,7 @@ export default function Home() {
             Reserve the Room<br />Like It Was Yours
           </h2>
           <p className="sc-body">
-            VIP table service at Loyalty Social Ultra Lounge gives your group premium
+            VIP table service at Loyalty Lounge Md gives your group premium
             placement, dedicated bottle service, and a more private rhythm inside the
             lounge. Whether it's date night, a celebration, or a professional gathering —
             your table is held.
@@ -120,7 +120,7 @@ export default function Home() {
                 <span className="frame-corner tr" aria-hidden="true" />
                 <span className="frame-corner bl" aria-hidden="true" />
                 <span className="frame-corner br" aria-hidden="true" />
-                <img src={event.image} alt={`${event.name} event at Loyalty Social Ultra Lounge`} />
+                <img src={event.image} alt={`${event.name} event at Loyalty Lounge Md`} />
               </div>
               <div className="event-tile-copy">
                 <p className="event-tile-day">{event.day}</p>
@@ -146,7 +146,7 @@ export default function Home() {
             <span className="frame-corner br" aria-hidden="true" />
             <img
               src="/loyal-assets/flyer-happy-fridays.jpeg"
-              alt="Happy Fridays — $5 drink specials and $7 food at Loyalty Social Ultra Lounge"
+              alt="Happy Fridays — $5 drink specials and $7 food at Loyalty Lounge Md"
             />
           </div>
           <div className="flyer-tile" data-frame>
@@ -156,7 +156,7 @@ export default function Home() {
             <span className="frame-corner br" aria-hidden="true" />
             <img
               src="/loyal-assets/flyer-karaoke-saturday.jpeg"
-              alt="Karaoke on Saturday — food specials 4PM–7PM at Loyalty Social Ultra Lounge"
+              alt="Karaoke on Saturday — food specials 4PM–7PM at Loyalty Lounge Md"
             />
           </div>
         </div>
@@ -171,7 +171,7 @@ export default function Home() {
           </h2>
           <p className="sc-body">
             From brand activations and professional mixers to birthday celebrations and
-            private nightly buyouts, Loyalty Social Ultra Lounge gives hosts a polished
+            private nightly buyouts, Loyalty Lounge Md gives hosts a polished
             environment with a nightlife pulse. The room is yours to shape.
           </p>
           <div className="sc-tags">
@@ -191,7 +191,7 @@ export default function Home() {
           <span className="frame-corner br" aria-hidden="true" />
           <img
             src="/loyal-assets/calvin-celebration.JPG"
-            alt="Private celebration at Loyalty Social Ultra Lounge"
+            alt="Private celebration at Loyalty Lounge Md"
           />
         </div>
       </section>
@@ -209,7 +209,7 @@ export default function Home() {
           <span className="frame-corner br" aria-hidden="true" />
           <img
             src="/loyal-assets/food-blackened-fish.jpeg"
-            alt="Blackened fish over pesto pasta at Loyalty Social Ultra Lounge"
+            alt="Blackened fish over pesto pasta at Loyalty Lounge Md"
           />
         </div>
         <div className="menu-band-copy">
@@ -237,7 +237,7 @@ export default function Home() {
           <span className="frame-corner br" aria-hidden="true" />
           <img
             src="/loyal-assets/jerk-chicken.jpeg"
-            alt="Jerk chicken at Loyalty Social Ultra Lounge"
+            alt="Jerk chicken at Loyalty Lounge Md"
           />
           <div className="food-label-overlay">Jerk Chicken</div>
         </div>
@@ -248,7 +248,7 @@ export default function Home() {
           <span className="frame-corner br" aria-hidden="true" />
           <img
             src="/loyal-assets/teriyaki-salmon.jpeg"
-            alt="Teriyaki salmon at Loyalty Social Ultra Lounge"
+            alt="Teriyaki salmon at Loyalty Lounge Md"
           />
           <div className="food-label-overlay">Teriyaki Salmon</div>
         </div>
@@ -259,7 +259,7 @@ export default function Home() {
           <span className="frame-corner br" aria-hidden="true" />
           <img
             src="/loyal-assets/loyaltysocial.jpg"
-            alt="The lounge at Loyalty Social Ultra Lounge"
+            alt="The lounge at Loyalty Lounge Md"
           />
           <div className="food-label-overlay">The Lounge</div>
         </div>
@@ -292,7 +292,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-main">
           <div className="footer-brand">
-            <p className="fb-name">Loyalty Social</p>
+            <p className="fb-name">Loyalty Lounge Md</p>
             <p className="fb-tagline">Ultra Lounge</p>
             <p className="fb-address">
               8521 Liberty Rd<br />
@@ -320,7 +320,7 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Loyalty Social Ultra Lounge. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Loyalty Lounge Md. All rights reserved.</p>
           <span className="age-badge">21+ Only</span>
         </div>
       </footer>

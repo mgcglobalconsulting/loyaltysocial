@@ -22,7 +22,7 @@ export default function ApplicationPage() {
   return (
     <HRLayout title="Employment Application" subtitle="All positions · Confidential">
       <p className="text-[#9F7A28] text-xs mb-8 italic">
-        Loyalty Social Ultra Lounge is an equal opportunity employer. All information is kept confidential and used only for hiring purposes.
+        Loyalty Lounge Md is an equal opportunity employer. All information is kept confidential and used only for hiring purposes.
       </p>
 
       <Section title="Personal Information">

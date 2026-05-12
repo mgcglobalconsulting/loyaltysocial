@@ -74,7 +74,7 @@ export default function SOPHub() {
           <p className="text-[#C9A24A] text-[10px] uppercase tracking-[0.6em]">Internal Operations</p>
           <h1 className="text-5xl sm:text-6xl font-extrabold text-white tracking-tight">Staff SOPs</h1>
           <p className="text-[#9F7A28] text-xs uppercase tracking-[0.4em]">
-            Loyalty Social Ultra Lounge · Baltimore, MD
+            Loyalty Lounge Md · Baltimore, MD
           </p>
           <div className="flex items-center gap-3 w-full max-w-xs">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#C9A24A]/60" />

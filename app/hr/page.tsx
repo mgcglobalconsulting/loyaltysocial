@@ -67,7 +67,7 @@ export default function HRHub() {
             Hiring Packet
           </h1>
           <p className="text-[#D4A93A] text-sm mt-3 uppercase tracking-[0.35em] font-medium">
-            Loyalty Social Ultra Lounge · Baltimore, MD
+            Loyalty Lounge Md · Baltimore, MD
           </p>
         </div>
 

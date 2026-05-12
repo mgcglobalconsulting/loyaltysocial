@@ -77,7 +77,7 @@ export default function BartenderSOP() {
     <SOPLayout
       department="Bartender"
       role="Bar Operations · Pre-Shift · Service · Close"
-      objective="Ensure the bar is fully operational, sanitized, stocked, and service-ready — delivering an elevated guest experience consistent with Loyalty Social Ultra Lounge standards."
+      objective="Ensure the bar is fully operational, sanitized, stocked, and service-ready — delivering an elevated guest experience consistent with Loyalty Lounge Md standards."
       phases={phases}
     />
   )

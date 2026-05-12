@@ -13,11 +13,11 @@ export default function HandbookPage() {
   return (
     <HRLayout title="Employee Handbook" subtitle="Overview · Rights · Expectations">
       <p className="text-[#9F7A28] text-xs italic mb-8">
-        This is an overview of the Loyalty Social Ultra Lounge employee handbook. Full policy details are contained in the Workplace Policies document. Management reserves the right to update policies with 7 days written notice.
+        This is an overview of the Loyalty Lounge Md employee handbook. Full policy details are contained in the Workplace Policies document. Management reserves the right to update policies with 7 days written notice.
       </p>
 
       <HandbookSection title="Our Mission"
-        body="Loyalty Social Ultra Lounge exists to provide an elevated, culturally rich nightlife experience for Baltimore's professional community. Every staff member is an ambassador of that mission. We hold ourselves to a higher standard — because our guests do too." />
+        body="Loyalty Lounge Md exists to provide an elevated, culturally rich nightlife experience for Baltimore's professional community. Every staff member is an ambassador of that mission. We hold ourselves to a higher standard — because our guests do too." />
 
       <HandbookSection title="Employment Classification"
         body="Staff may be employed as Full-Time (30+ hours/week), Part-Time (<30 hours/week), or Event Staff (per-event basis). Classification determines eligibility for benefits, if any are offered, and scheduling priority. Classification changes require written notice from management." />
@@ -40,7 +40,7 @@ export default function HandbookPage() {
       <div className="mt-10 bg-[#0B0B0B] border border-[#242424] rounded-lg px-6 py-5">
         <p className="text-[#C9A24A] text-xs uppercase tracking-widest mb-3">Receipt of Handbook</p>
         <p className="text-[#9F7A28] text-xs mb-6">
-          I acknowledge receipt of the Loyalty Social Ultra Lounge Employee Handbook. I understand it is my responsibility to read and comply with its contents.
+          I acknowledge receipt of the Loyalty Lounge Md Employee Handbook. I understand it is my responsibility to read and comply with its contents.
         </p>
         <div className="grid grid-cols-2 gap-8">
           <div>

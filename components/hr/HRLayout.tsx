@@ -31,7 +31,7 @@ export function HRLayout({ title, subtitle, children, heroImage }: HRLayoutProps
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pb-6">
           <p className="text-[#C9A24A] text-[10px] uppercase tracking-[0.55em] mb-2">
-            Loyalty Social Ultra Lounge · Human Resources
+            Loyalty Lounge Md · Human Resources
           </p>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight drop-shadow-xl">
             {title}
@@ -48,7 +48,7 @@ export function HRLayout({ title, subtitle, children, heroImage }: HRLayoutProps
       <div className="hidden print:flex items-start justify-between border-b-2 border-[#C9A24A] pb-4 mb-6">
         <div>
           <p className="text-[10px] uppercase tracking-[0.35em] text-gray-500 mb-0.5">
-            Loyalty Social Ultra Lounge · Human Resources
+            Loyalty Lounge Md · Human Resources
           </p>
           <h1 className="text-3xl font-black text-black">{title}</h1>
           <p className="text-xs text-gray-500 uppercase tracking-widest mt-0.5">{subtitle}</p>
@@ -76,7 +76,7 @@ export function HRLayout({ title, subtitle, children, heroImage }: HRLayoutProps
         {/* Footer */}
         <div className="mt-14 print:mt-8 pt-6 border-t border-[#1C1C1C] print:border-gray-300">
           <div className="flex justify-between text-[10px] text-[#383838] print:text-gray-400">
-            <span>Loyalty Social Ultra Lounge · Baltimore, MD · Confidential HR Document</span>
+            <span>Loyalty Lounge Md · Baltimore, MD · Confidential HR Document</span>
             <span>Internal Use Only</span>
           </div>
         </div>
