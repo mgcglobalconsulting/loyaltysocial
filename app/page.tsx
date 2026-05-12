@@ -1,6 +1,7 @@
 import { Hero } from '../components/Hero'
 import { Marquee } from '../components/Marquee'
 import { ReservationForm } from '../components/ReservationForm'
+import { FlyerCarousel } from '../components/FlyerCarousel'
 
 const loungeMarqueeItems = [
   'Birthday Celebrations',
@@ -132,35 +133,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── WEEKLY SPECIALS FLYERS ── */}
-      <section className="flyers-section" aria-label="Weekly specials and promotions">
-        <div className="flyers-head">
-          <p className="es-label">Happening Weekly</p>
-          <h2 className="es-heading">Specials &amp; Promos</h2>
-        </div>
-        <div className="flyers-grid">
-          <div className="flyer-tile" data-frame>
-            <span className="frame-corner tl" aria-hidden="true" />
-            <span className="frame-corner tr" aria-hidden="true" />
-            <span className="frame-corner bl" aria-hidden="true" />
-            <span className="frame-corner br" aria-hidden="true" />
-            <img
-              src="/loyal-assets/flyer-happy-fridays.jpeg"
-              alt="Happy Fridays — $5 drink specials and $7 food at Loyalty Lounge Md"
-            />
-          </div>
-          <div className="flyer-tile" data-frame>
-            <span className="frame-corner tl" aria-hidden="true" />
-            <span className="frame-corner tr" aria-hidden="true" />
-            <span className="frame-corner bl" aria-hidden="true" />
-            <span className="frame-corner br" aria-hidden="true" />
-            <img
-              src="/loyal-assets/flyer-karaoke-saturday.jpeg"
-              alt="Karaoke on Saturday — food specials 4PM–7PM at Loyalty Lounge Md"
-            />
-          </div>
-        </div>
-      </section>
+      {/* ── WEEKLY SPECIALS CAROUSEL ── */}
+      <FlyerCarousel />
 
       {/* ── PRIVATE EVENTS SPLIT ── (copy left, image right) */}
       <section className="split-full img-right" id="private-events">
